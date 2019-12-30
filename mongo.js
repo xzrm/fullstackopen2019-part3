@@ -14,28 +14,29 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema)
 
-if (process.argv.length<4){
-    Person
+if (process.argv.length < 4) {
+  Person
     .find({})
-    .then(persons=> {
-        console.log('phonebook: \n')
-        persons.map(person => {
+    .then(persons => {
+      console.log('phonebook: \n')
+      persons.map(person => {
         console.log(person.name, person.number)
-        })
-        mongoose.connection.close()
-    }
-    )}
-else{
-    const personToAdd = process.argv[3]
-    const numberToAdd = process.argv[4]
-    const personObj = new Person({
-        name: personToAdd,
-        number: numberToAdd,
-    })
-    personObj.save().then(response => {
-      console.log('person saved!')
+      })
       mongoose.connection.close()
-    })
+    }
+    )
+}
+else {
+  const personToAdd = process.argv[3]
+  const numberToAdd = process.argv[4]
+  const personObj = new Person({
+    name: personToAdd,
+    number: numberToAdd,
+  })
+  personObj.save().then(response => {
+    console.log('person saved!')
+    mongoose.connection.close()
+  })
 }
 
 
