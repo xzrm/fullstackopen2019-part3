@@ -1,3 +1,11 @@
+/* Part of Exercise 3.12:
+ command-line args:
+          node mongo.js yourpassword Anna 040-1234556
+ expected output:
+          added Anna number 040-1234556 to phonebook &
+          list of other entries
+*/
+
 const mongoose = require('mongoose')
 
 const password = process.argv[2]
@@ -5,7 +13,10 @@ const password = process.argv[2]
 const url =
   `mongodb+srv://new-user_04:${password}@cluster0-nqxxg.mongodb.net/phonebook-app?retryWrites=true&w=majority`
 
-mongoose.connect(url, { useNewUrlParser: true })
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 
 const personSchema = new mongoose.Schema({
   name: String,

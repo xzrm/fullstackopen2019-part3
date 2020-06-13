@@ -1,20 +1,21 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'commonjs': true,
-    'es6': true
+  "env": {
+    "node": true,
+    "browser": true,
+    "commonjs": true,
+    "es6": true
   },
-  'extends': 'eslint:recommended',
-  'globals': {
-    'Atomics': 'readonly',
-    'SharedArrayBuffer': 'readonly'
+  "extends": "eslint:recommended",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
   },
-  'parserOptions': {
-    'ecmaVersion': 2018
+  "parserOptions": {
+    "ecmaVersion": 2018
   },
-  'rules': {
-    'indent': [
-      'error',
+  "rules": {
+    "indent": [
+      "error",
       2
     ],
     "eqeqeq": "error",
@@ -26,17 +27,17 @@ module.exports = {
       "error", { "before": true, "after": true }
     ],
     "no-console": 0,
-    'linebreak-style': [
-      'error',
-      'windows'
+    "linebreak-style": [
+      "error",
+      "windows"
     ],
-    'quotes': [
-      'error',
-      'single'
+    "quotes": [
+      "error",
+      "single"
     ],
-    'semi': [
-      'error',
-      'never'
+    "semi": [
+      "error",
+      "never"
     ]
   }
 }
